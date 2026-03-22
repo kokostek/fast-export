@@ -172,7 +172,7 @@ def largefile_orig_name(filename):
 
 def largefile_data(ctx, file, filename):
   lf_file_ctx=ctx.filectx(file)
-  lf_hash=lf_file_ctx.data().strip(b'\n')
+  lf_hash=lf_file_ctx.data().strip()
   sys.stderr.write("Detected large file hash %s\n" % lf_hash.decode())
   #should detect where the large files are located
   file_with_data = lfutil.findfile(ctx.repo(), lf_hash)
